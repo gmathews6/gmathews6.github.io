@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>3.3 Gary's Restaurant</title>
+  <meta charset="UTF-8">
+  <!-- IE Compatibility Mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Business Website">
+  <meta name="keywords" content="Restaurant, Business, Responsive, HTML, CSS, JavaScript">
+  <meta name="author" content="Gary Mathews II">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
+  <!-- JQuery CDN. Needed to run JQuery on website. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+
+  	body {
+  		max-width: 600px;
+  		margin: 0 auto;
+  		background-color: #232323;
+  	}
+
+  	h1 {
+  		font-family: 'Londrina Shadow', cursive;
+  		font-size: 75px;
+  		text-align: center;
+  		margin: 60px 0 0 0;
+  		color: #aaaaaa;
+  	}
+
+  	h2 {
+  		text-align: center;
+  		margin: 0px 0 70px 0;
+  		color: #bbbbbb;
+  	}
+
+    div {
+    	height: 200px;
+    	background-size: cover;
+    	position: relative;
+    	margin: 40px 0 0 0;
+    	border-radius: 12px;
+    }
+
+    p {
+    	color: rgba(255,255,255,1);
+    	background: black;
+    	padding: 10px;
+    	text-align: justify;
+    	line-height: 28px;
+    	position: absolute;
+    	bottom: 0;
+    	/* Makes the paragraph appear ALL THE WAY at the bottom of the div. */
+    	margin: 0;
+    	background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+    	background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+    	background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+      /* Pushes the menu item title and price down to align with the black background. */
+      height: 30px;
+      /* Anytime the paragraph's height changes, it should build in a half-second delay. */
+      transition: height 0.5s;
+      -webkit-transition: height 0.5s;
+      -moz-transition: height 0.5s;
+    }
+
+    /* Hides the description. */
+    small {
+      opacity: 0;
+    }
+
+    .first {
+    	background: url("http://dash.ga.co/assets/firstcourse.jpg");
+    }
+
+    .second {
+    	background: url("http://dash.ga.co/assets/secondcourse.jpg");
+    }
+
+    .dessert {
+    	background: url("http://dash.ga.co/assets/dessertcourse.jpg");
+    }
+
+    .price {
+    /* Text-align can only align BLOCK elements. So if you attempt ot text-algn a span element, it will not work since a span element is an INLINE element. The best way to align a span element is to use the CSS FLOAT property. */
+
+    	float: right;
+    }
+
+    /* If a paragraph tag is in a class called "show-description". */
+    .show-description p {
+      height: 150px;
+    }
+
+    /* If a small tag is in a class called "show-description". */
+    .show-description small {
+      opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 50px;
+        margin-top: 20px;
+        line-height: 40px;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 20px 0 30px 0;
+      }
+      div {
+        margin: 20px 12px 0 12px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      small {
+        font-size: 16px;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+  
+  <h1>garrrrrrrrrssssy's restaurant</h1>
+  <h2>A New York City Eatery</h2>
+  
+  <div class="first">  	
+    <p>welsh onion soko <span class="price">$14</span><br/>
+    <small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil.</small>
+	</p>
+  </div>
+  
+  <div class="second">
+  	<p>pastrami boudin tongue <span class="price">$22</span><br/>
+  	<small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small>
+  </p>
+  </div>
+  
+  <div class="dessert">
+ 	<p>fruitcake marzipan pudding dragee <span class="price">$8</span><br/>
+ 	<small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p>
+  </div>
+
+  <!-- We can include JavaScript in our Webpage by including the script tag towards the end of the body tag. 
+       We can use JavaScript to listen for events (button clicks, the pressing of a key, scrolling), and then take action when they happen.-->
+  <!-- JQuery is a Javascript library. It simplifies the programming and development of JavaScript-based applications
+       and other web-centric technologies. The following code uses JQuery to make it eaiser to select elements and listen for events.  -->
+
+  <script>
+    $("div").on("click", function() {
+      $(this).toggleClass("show-description");
+    });
+  </script>
+
+</body>
+</html>
+
+
+<!-- NOTES -->
+
+<!-- BLOCK elements take up the whole pag width, while INLINE elements exist within those lines and only take up as much space as they need to.  Hence, Text-align can only align BLOCK elements. So if you attempt ot text-algn a span element, it will not work since a span element is an INLINE element. -->
+
+<!-- The best way to align a span element is to use the CSS FLOAT property. -->
+
+<!-- BLOCK ELEMENTS -->
+<!-- paragraphs, headers, lists, divs -->
+
+<!-- INLINE ELEMENTS -->
+<!-- hyperlinks, images, spans, form fields <input> -->
+
+<!-- Vendor prefixes must be specified in order to allow gradients to be used on webpages. 
+	 
+	 In Safari, Chrome, Opera = background: -webkit-linear-gradient
+	 In Firefox = -moz-liniear-gradient
+	 In the Future = liniear-gradient
+
+	 Hence, we have to write multiple background styles to have our code ork with different browsers. -->
+
+<!-- Google Web Fonts = www.google.com/fonts -->
+
+<!-- The universal style gives 40px of margin to the top of each div, and has no margins assigned to the sides or bottom. -->
+
+<!-- HTML elements can gave multiple classes attached to them. 
+     i.e. - <div class="first show-description"> has 2 classes - first & show-description -->
+
+<!-- Vendor prefixes must also be specified in order to allow CSS transitions to be used on webpages. 
+   
+   In Safari, Chrome, Opera = background: -webkit-transition
+   In Firefox = -moz-transition
+   In the Future = transition
+
+   Hence, we have to write multiple background styles to have our code ork with different browsers. -->
+
+
